@@ -1,0 +1,101 @@
+/* ============================================================================
+   60+ Quiz Club — Activity Directors page (index.html) PRINT STYLES
+   ----------------------------------------------------------------------------
+   HOW TO APPLY (one line, added by the parent — this file does not edit
+   index.html by itself):
+
+     Add inside <head> of site/activity-directors/index.html, AFTER the
+     existing <style> block:
+
+       <link rel="stylesheet" href="print-block.css">
+
+     …and copy this file next to index.html. (Equally fine: paste the whole
+     @media print block below into the existing <style> instead.)
+
+   GOAL: the page prints like a clean paper handout — white background,
+   black text, no heavy colour blocks eating ink, big readable type,
+   and a fresh page at each major section.
+   ============================================================================ */
+
+@media print {
+
+  @page { size: Letter portrait; margin: 0.6in; }   /* A4 works too */
+
+  /* ---- Base: black on white, still senior-readable ---- */
+  html { font-size: 13.5pt; }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    line-height: 1.45;
+  }
+  .wrap { max-width: none; padding: 0; }
+  * { -webkit-print-color-adjust: economy; print-color-adjust: economy; }
+
+  /* ---- Header: from navy block to a bordered title box ---- */
+  header {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2.5pt solid #000;
+    border-bottom: 5pt solid #000;
+    padding: 0.9rem 1rem 1rem;
+  }
+  header .brand { color: #000 !important; border-color: #000; }
+  h1 { font-size: 1.9rem; color: #000 !important; }
+  header p.lede { font-size: 1.05rem; }
+
+  /* ---- Headings: black, with a rule; each section starts a new page ---- */
+  h2, h3 { color: #000 !important; }
+  h2 {
+    border-bottom: 2.5pt solid #000;
+    font-size: 1.35rem;
+    margin-top: 0;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  /* Every h2 section after the first begins on a fresh printed page.
+     (Delete this rule if a continuous printout is preferred.) */
+  .wrap > h2 ~ h2 { break-before: page; page-break-before: always; }
+
+  /* ---- Keep blocks whole: never split a box or table across pages ---- */
+  .permission, .scorecard, .fact, table, footer { break-inside: avoid; page-break-inside: avoid; }
+  tr { break-inside: avoid; page-break-inside: avoid; }
+
+  /* ---- Permission box: white paper, heavy black frame ---- */
+  .permission {
+    background: #fff !important;
+    border: 2.5pt solid #000;
+  }
+  .permission strong { color: #000 !important; }
+
+  /* ---- Scorecard callout: was a navy block — print it as a framed box ---- */
+  .scorecard {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2.5pt solid #000;
+  }
+  a.btn {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2pt solid #000;
+  }
+  /* A printed button can't be clicked — say where it points. */
+  .scorecard a.btn::after { content: " — file: scorecard-letter.pdf (next to this page online)"; font-weight: normal; }
+
+  /* ---- Fact tiles & tables: outlines only, no fills ---- */
+  .fact { background: #fff !important; border: 1.5pt solid #000; }
+  .fact .big { color: #000 !important; }
+  table { background: #fff !important; }
+  th {
+    background: #fff !important;
+    color: #000 !important;
+    border-bottom: 2.5pt solid #000;
+  }
+  td { border-color: #666; }
+  tr:nth-child(even) td { background: #fff !important; }
+
+  /* ---- Links: readable on paper ---- */
+  a { color: #000 !important; text-decoration: underline; }
+  td a { font-weight: bold; }
+
+  footer { border-top: 2.5pt solid #000; color: #000 !important; }
+}
