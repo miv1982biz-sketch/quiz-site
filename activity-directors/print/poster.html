@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quiz Time! — 60+ Quiz Club Poster (print me)</title>
+<!--
+  BULLETIN-BOARD POSTER — 60+ Quiz Club
+  Print: one page, US Letter portrait (A4 also works — same design, slightly narrower margins).
+  Print at 100% / "Actual size", colour if you can, black-and-white is fine too.
+-->
+<style>
+  :root{
+    --navy:#162D5C; --cream:#F7EFDA; --red:#B63727; --gold:#E8A33D;
+    --ink:#22242a; --paper:#FFFDF6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  @page{ size:Letter portrait; margin:0.45in; }
+  html{font-size:20px}
+  body{
+    font-family:Georgia,"Times New Roman",serif; color:var(--ink);
+    background:#fff; text-align:center;
+  }
+  .sheet{
+    border:6px solid var(--navy); border-radius:18px;
+    padding:0 0 0.9rem; overflow:hidden;
+    height:10.05in; display:flex; flex-direction:column;
+  }
+  header{
+    background:var(--navy); color:var(--cream);
+    padding:1.1rem 1rem 1.2rem; border-bottom:10px solid var(--gold);
+  }
+  .brand{
+    display:inline-block; border:3px solid var(--gold); border-radius:999px;
+    padding:.3rem 1.1rem; font-weight:bold; letter-spacing:.14em;
+    font-size:.95rem; color:var(--gold);
+    font-family:Verdana,Arial,sans-serif; margin-bottom:.7rem;
+  }
+  h1{
+    font-size:4.6rem; line-height:1; letter-spacing:.01em; color:#fff;
+    font-family:Verdana,Arial,sans-serif; font-weight:900;
+  }
+  h1 .bang{color:var(--gold)}
+  .sub{
+    font-size:1.75rem; font-weight:bold; color:var(--navy);
+    margin:1.05rem 1rem .3rem; line-height:1.25;
+  }
+  .free{
+    font-size:1.3rem; color:var(--red); font-weight:bold; margin:0 1rem;
+  }
+  .when{
+    margin:1.15rem 1.4rem 0; padding:1rem 1.1rem;
+    background:var(--cream); border:3px dashed var(--navy); border-radius:12px;
+    font-size:1.45rem; line-height:2.1; color:var(--navy);
+  }
+  .when .line{
+    display:inline-block; min-width:2.2em;
+    border-bottom:4px solid var(--navy); height:1em; vertical-align:baseline;
+  }
+  .when .line.wide{min-width:4.2em}
+  .welcome{
+    font-size:1.35rem; margin:1.05rem 1.4rem 0; line-height:1.4;
+  }
+  .qr{margin-top:auto; padding-top:1rem}
+  .qr img{width:2.35in; height:2.35in}
+  .qr .scan{
+    font-family:Verdana,Arial,sans-serif; font-weight:bold;
+    font-size:1.15rem; color:var(--navy); margin-top:.35rem;
+  }
+  .qr .url{font-size:1.05rem; color:var(--ink)}
+  footer{
+    margin-top:.85rem; padding:.65rem 1rem 0;
+    border-top:4px solid var(--gold);
+    font-family:Verdana,Arial,sans-serif; font-size:.95rem; color:var(--navy);
+  }
+  @media print{
+    body{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <div class="brand">60+ QUIZ CLUB</div>
+    <h1>QUIZ TIME<span class="bang">!</span></h1>
+  </header>
+
+  <p class="sub">50 Questions From the World<br>You Grew Up In</p>
+  <p class="free">Free weekly group quizzes on the big screen</p>
+
+  <p class="when">
+    <span class="line"></span>days at <span class="line"></span><br>
+    in the <span class="line wide"></span> room
+  </p>
+
+  <p class="welcome">Everyone welcome — bring a pencil,<br>or just shout your answers!</p>
+
+  <div class="qr">
+    <img src="qr-youtube.png" alt="QR code linking to the 60+ Quiz Club channel on YouTube">
+    <p class="scan">Scan to watch on YouTube: 60+ Quiz Club</p>
+    <p class="url">youtube.com/@60PlusQuizClub</p>
+  </div>
+
+  <footer>60+ Quiz Club · Operated by globe Entertainment · Free forever — no sign-up</footer>
+
+</div>
+</body>
+</html>
